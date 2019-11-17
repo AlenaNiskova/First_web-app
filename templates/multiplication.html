@@ -1,0 +1,12 @@
+<#ftl encoding="UTF-8"/>
+<a href="http://localhost:8080/">На главную</a><br/>
+Введите размерность входной матрицы.
+<form name="matrix_size" method="get" onsubmit="return validate();">
+    <table>
+        <tr><td>Количество строк: </td><td><input required type="number" min="1" name="matrix_row" value="${matrix_row}"></td>
+        <tr><td>Количество столбцов: </td><td><input required type="number" min="1" name="matrix_col" value="${matrix_col}"></td></tr>
+    </table>
+    Умножение на какую эталонную матрицу будет производиться?<br/>
+    <input required type="radio" name="which_matrix" value="unit">Единичная матрица<br/>
+    <input type="radio" name="which_matrix" value="random">Случайная разреженная матрица<br/>
+    <input type="radio" name="which_matrix" id="static" value="static">Одна из статичных матриц<br/>
