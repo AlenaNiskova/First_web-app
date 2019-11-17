@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 public class Front extends HttpServlet {
 
-    private static final int n = 10;
+    private static final int n = 10000000;
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html;charset=UTF-8");
