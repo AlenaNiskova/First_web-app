@@ -25,13 +25,12 @@ public class Front extends HttpServlet {
 
     private void createPage(HttpServletResponse response, HttpServletRequest request) throws IOException {
         getFiles(request, response);
-        String selected = request.getParameter("file_matrix");
         response.getWriter().println("<table>");
         for (int i=1; i<=n; i++) {
             response.getWriter().println("<tr>");
             for (int j = 1; j <= n; j++) {
-                if (i==1 && j==1) response.getWriter().println("<td><input required style=\"width: 60px;\" max=\"100\" type=\"number\" name=\"m_" + i + "_" + j + "\"></td>");
-                else response.getWriter().println("<td><input style=\"width: 60px;\" max=\"100\" type=\"number\" name=\"m_" + i + "_" + j + "\"></td>");
+                if (i==1 && j==1) response.getWriter().println("<td><input required style=\"width: 60px;\" max=\"100\" type=\"number\" name=\"m_" + i + "_" + j + "\" step=\"any\"></td>");
+                else response.getWriter().println("<td><input style=\"width: 60px;\" max=\"100\" type=\"number\" name=\"m_" + i + "_" + j + "\" step=\"any\"></td>");
             }
             response.getWriter().println("</tr>");
         }
@@ -98,7 +97,6 @@ public class Front extends HttpServlet {
         else {
             int col = (int) Math.round(matrix.get("col"));
             int row = (int) Math.round(matrix.get("row"));
-            Map<String, Double> mat = new HashMap<>();
             Map<String, Double> res;
             response.getWriter().println("Входная матрица введена верно<br/>");
             String which = request.getParameter("which_matrix");
