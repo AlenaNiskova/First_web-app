@@ -9,7 +9,6 @@ import java.io.Writer;
 import java.util.Map;
 
 public class PageGenerator {
-    private static final String HTML_DIR = "templates";
 
     private static PageGenerator pageGen;
     private final Configuration conf;
@@ -24,7 +23,7 @@ public class PageGenerator {
     public String getPage(String file, Map<String, Object> data) {
         Writer stream = new StringWriter();
         try {
-            Template template = conf.getTemplate(HTML_DIR+ File.separator+file);
+            Template template = conf.getTemplate(File.separator+file);
             template.process(data, stream);
         } catch (IOException | TemplateException e) {
             e.printStackTrace();

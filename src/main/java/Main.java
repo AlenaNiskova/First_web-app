@@ -17,7 +17,7 @@ public class Main extends JFrame {
         BoxLayout layoutMgr = new BoxLayout(child, BoxLayout.PAGE_AXIS);
         child.setLayout(layoutMgr);
 
-        ImageIcon imageIcon = new ImageIcon("img/working.gif");
+        ImageIcon imageIcon = new ImageIcon("working.gif");
         JLabel iconLabel = new JLabel();
         iconLabel.setIcon(imageIcon);
         imageIcon.setImageObserver(iconLabel);
